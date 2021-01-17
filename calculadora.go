@@ -28,7 +28,7 @@ func obtainOperation() (string, error) {
 	if patern.MatchString(operation) { //Comprobamos si la entrada concuerda con nuestra expresion, en caso contrario devolvemos un error.
 		return operation, nil
 	}
-	return "", errors.New("[e]Lexical: La entrada no es un operador")
+	return "", errors.New("[!]Lexical: La entrada no es un operador")
 }
 
 func obtainNumbers(operation string) (float64, float64) {
@@ -50,6 +50,7 @@ func obtainOperator(operation string) byte {
 func operate() float64 {
 	operation, err := obtainOperation() //Obtener la operacion del usuario
 	if err != nil {
+		fmt.Println(err)
 		os.Exit(1)
 	}
 	value1, value2 := obtainNumbers(operation)                  //Obtener los valores
@@ -73,5 +74,5 @@ func calculate(value1 float64, value2 float64, operator byte) float64 {
 
 func main() {
 	ans := operate() //Funcion que realizara el calculo
-	fmt.Printf("The output value is %f\n", ans)
+	fmt.Printf("[*] El resultado es %f\n", ans)
 }
