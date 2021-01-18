@@ -34,28 +34,39 @@ func (t *task) updateDescription(description string) {
 
 func main() {
 	t1 := &task{
-		name:        "Terminar Curso de Go",
-		description: "Terminar el Curso de Go en Platzi en las proximas dos semanas",
+		name:        "Tarea 1",
+		description: "Ejemplo de manejo de punteros ",
 	}
 	t2 := &task{
-		name:        "Terminar Curso de JavaScript",
-		description: "Terminar mi curso de Async/Await en JavaScript",
+		name:        "Tarea 2",
+		description: "Ejemplo de lista",
 	}
 	list := &taskList{
 		tasks: []*task{
 			t1, t2,
 		},
-	}
-	fmt.Printf("%+v\n", *list.tasks[0])
-	fmt.Printf("%+v\n", *list.tasks[1])
+	} // crea una lista definida
+
+	// Muestra las dos tareas iniciales
+	fmt.Printf("%+v\n\n", *list.tasks[0])
+	fmt.Printf("%+v\n\n", *list.tasks[1])
+
+	//Marca tarea 2 como completada
 	list.tasks[1].markAsCompleted()
-	fmt.Printf("%+v\n", *list.tasks[1])
+
+	// Muestra tarea 2
+	fmt.Printf("%+v\n\n", *list.tasks[1])
+
+	// Creando tarea
 	t3 := &task{
-		name:        "Construir mi propio servidor web",
-		description: "Construir mi propio web server utilizando Go",
+		name:        "Tarea3",
+		description: "Manejo de fors",
 	}
+	// append
 	list.appendTask(t3)
-	fmt.Printf("%+v\n", *list.tasks[2])
+	fmt.Printf("%+v\n\n", *list.tasks[2])
+
+	// elimina tarea2
 	list.removeTask(1)
-	fmt.Printf("%+v\n", *list.tasks[1])
+	fmt.Printf("%+v\n\n", *list.tasks[1])
 }
