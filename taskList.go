@@ -52,14 +52,14 @@ func main() {
 	} // crea una lista definida
 
 	// Muestra las dos tareas iniciales
-	fmt.Printf("%+v\n\n", *list.tasks[0])
-	fmt.Printf("%+v\n\n", *list.tasks[1])
+	// fmt.Printf("%+v\n\n", *list.tasks[0])
+	// fmt.Printf("%+v\n\n", *list.tasks[1])
 
 	//Marca tarea 2 como completada
 	list.tasks[1].markAsCompleted()
 
 	// Muestra tarea 2
-	fmt.Printf("%+v\n\n", *list.tasks[1])
+	//fmt.Printf("%+v\n\n", *list.tasks[1])
 
 	// Creando tarea
 	t3 := &task{
@@ -68,9 +68,15 @@ func main() {
 	}
 	// append
 	list.appendTask(t3)
-	fmt.Printf("%+v\n\n", *list.tasks[2])
+	fmt.Printf("<--Imprimiendo lista con for i-->\n")
+	// for I
+	for i := 0; i < len(list.tasks); i++ {
+		fmt.Printf("Index:%d Tarea:%+v\n\n", i, *list.tasks[i])
+	}
 
-	// elimina tarea2
-	list.removeTask(1)
-	fmt.Printf("%+v\n\n", *list.tasks[1])
+	fmt.Printf("<--Imprimiendo con foreach-->\n")
+	// for each
+	for i, tarea := range list.tasks {
+		fmt.Printf("Index:%d Tarea:%+v\n\n", i, *tarea)
+	}
 }
