@@ -7,7 +7,6 @@ type taskList struct {
 }
 
 func (t *taskList) appendTask(tl *task) {
-
 	t.tasks = append(t.tasks, tl)
 }
 
