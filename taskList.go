@@ -18,6 +18,26 @@ func (t *taskList) removeTask(index int) {
 	t.tasks = append(t.tasks[:index], t.tasks[index+1:]...)
 }
 
+func (t *taskList) printList() {
+	fmt.Printf("<--Creando funcion dentro del Struct-->\n")
+	for _, task := range t.tasks {
+		fmt.Println("\nNombre: ", task.name)
+		fmt.Println("Description: ", task.description)
+	}
+}
+
+func (t *taskList) printListCompleted() {
+	fmt.Println("<-- Tareas completadas -->")
+	for _, task := range t.tasks {
+		if task.completed {
+			fmt.Println("\nNombre: ", task.name)
+			fmt.Println("Description: ", task.description)
+			fmt.Println("Completed: ", task.completed)
+
+		}
+	}
+}
+
 type task struct {
 	name        string
 	description string
@@ -79,4 +99,8 @@ func main() {
 	for i, tarea := range list.tasks {
 		fmt.Printf("Index:%d Tarea:%+v\n\n", i, *tarea)
 	}
+
+	list.printList()
+
+	list.printListCompleted()
 }
