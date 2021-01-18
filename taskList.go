@@ -11,6 +11,10 @@ func (t *taskList) appendTask(tl *task) {
 }
 
 func (t *taskList) removeTask(index int) {
+	/**
+	* ... es el operador ellipis que permite extraer todos los elementos
+	* de un arreglo, ya que append solo acepta elementos de un objeto
+	 */
 	t.tasks = append(t.tasks[:index], t.tasks[index+1:]...)
 }
 
