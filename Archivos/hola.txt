@@ -1,0 +1,6 @@
+Hola
+este es
+un
+archivo
+que se carga en 
+Memoria
