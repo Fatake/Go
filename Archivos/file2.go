@@ -22,4 +22,6 @@ func main() {
 		fmt.Println(linea)
 		time.Sleep(250 * time.Millisecond)
 	}
+
+	file.Close()
 }
