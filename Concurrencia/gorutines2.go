@@ -21,7 +21,7 @@ func main() {
 
 	fmt.Println("[m] Esperando rutinas...")
 	wg.Wait()
-	fmt.Println("\n[m] end")
+	fmt.Println("\r\n[m] end")
 
 }
 
