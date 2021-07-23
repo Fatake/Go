@@ -14,6 +14,19 @@ func main() {
 
 	//Función "defer"
 	printHelloWorld()
+
+	r1, r2 := dobleRetorno(2, 1)
+	fmt.Println("Numeros Retornados", r1, r2)
+}
+
+func unParametro(numero int) int {
+	fmt.Println("Numero dado: ", numero)
+	return numero + 1
+}
+
+func dobleRetorno(a, b int) (c, d int) {
+	fmt.Println("Numeros dados", a, b)
+	return a + b, b - a
 }
 
 // func types
