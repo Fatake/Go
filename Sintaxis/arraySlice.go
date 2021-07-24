@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var array [4]int
@@ -26,4 +29,33 @@ func main() {
 	newSlice := []int{12, 13, 14}
 	slice = append(slice, newSlice...)
 	fmt.Println(slice)
+
+	fmt.Println(isPalindromeSinRange("Anita lava la tina"))
+
+	fmt.Println(isPalindromeConRange("Anita lava la tina"))
+}
+
+func isPalindromeSinRange(text string) string {
+	var textReverse string
+	text = strings.ToLower(text)               // Pasamos el texto a minúsculas
+	text = strings.ReplaceAll(" ", text, text) // Eliminamos los espacios
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		return "No es palindrome"
+	} else {
+		return "Es palindrome"
+	}
+
+}
+
+func isPalindromeConRange(palabra string) string {
+	for i := range palabra {
+		if palabra[i] != palabra[len(palabra)-1-i] {
+			return "No es palindrome con Range"
+		}
+	}
+	return "Es palidrome con Range"
 }
