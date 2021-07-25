@@ -13,7 +13,7 @@ func say(text string, wg *sync.WaitGroup) { // Gorutine
 	fmt.Println(text)
 }
 
-func main22() {
+func main() {
 
 	var wg sync.WaitGroup
 	// El paquete sync permite interacturar de forma primitiva con las gorutine.
@@ -21,11 +21,12 @@ func main22() {
 
 	fmt.Println("Hello")
 
-	wg.Add(1)
+	wg.Add(2)
 	// Indicamos que vamos a agregar 1 Gorutine al WaitGroup para
 	// que espere su ejecucion antes de que la gurutine base (main) muera, y así le de tiempo a la siguiente gorutine de ejecutarse
 
 	go say("world", &wg)
+	go say("!", &wg)
 	// la palabra reservada go ejecutará la funcion
 	// de forma concurrente
 
