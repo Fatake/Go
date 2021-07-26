@@ -12,7 +12,7 @@ func main() {
 	c <- "Mensaje 1"
 	c <- "Mensaje 2"
 
-	fmt.Println(len(c), cap(c))
+	fmt.Println("Tamaño Canal:", len(c), "\nCapacidad de Canal:", cap(c))
 
 	// Range y close
 	close(c)
