@@ -10,6 +10,9 @@ func main() {
 	c := make(chan string, 2)
 
 	c <- "Mensaje 1"
+
+	fmt.Println("Tamaño Canal:", len(c), "\nCapacidad de Canal:", cap(c))
+
 	c <- "Mensaje 2"
 
 	fmt.Println("Tamaño Canal:", len(c), "\nCapacidad de Canal:", cap(c))
